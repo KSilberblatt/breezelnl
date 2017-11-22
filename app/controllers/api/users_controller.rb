@@ -1,8 +1,12 @@
 class Api::UsersController < ApplicationController
   def create
-    user = User.find_by_credentials(user_params[:email], user_params[:password])
+    user = User.new(user_params[:email], user_params[:password])
     if user.save!
-      
+      login(user)
+      #redirect or render json
+    else
+      #throw errors
+    end
   end
 
   private
