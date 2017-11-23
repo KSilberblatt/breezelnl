@@ -24,8 +24,11 @@ export const login = (user1) => (dispatch) => (
     (user2) => (dispatch(receiveCurrentUser(user2))))
 );
 
+window.login = login; // take out eventually
+
 export const logout = () => (dispatch) => (
   SessionAPIUtil.logout().then(user => (
     dispatch(receiveCurrentUser(null))
   ))
 );
+window.logout = logout; // take out eventually

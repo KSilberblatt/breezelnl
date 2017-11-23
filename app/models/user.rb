@@ -17,8 +17,8 @@ class User < ApplicationRecord
     self.password_digest = BCrypt::Password.create(password)
   end
 
-  def isPassword?(password)
-    BCrypt::Password.new(self.password_digest).isPassword?(password)
+  def is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
   def reset_session_token!

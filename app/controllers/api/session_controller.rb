@@ -6,7 +6,7 @@ class Api::SessionController < ApplicationController
 
     if @user
       login(@user)
-      # TODO: render search page
+      render "api/users/show"
     else
       render json: ["Invalid username or password"], status: 401
     end
@@ -16,7 +16,7 @@ class Api::SessionController < ApplicationController
     @user = current_user
     if @user
       logout
-      # TODO: render breezeLnL homepage
+      render "api/users/show"
     else
       render json: ["Nobody is logged in"], status: 404
     end
