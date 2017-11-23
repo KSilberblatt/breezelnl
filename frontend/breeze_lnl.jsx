@@ -5,14 +5,23 @@ import configureStore from './store/store';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const store = configureStore();
+
+  let preloadedState = undefined;
+  if (window.currentUser) {
+    preloadedState = {
+      session: {
+        currentUser: window.currentUser
+      }
+    };
+  }
+  const store = configureStore(preloadedState);
+
+  const root = document.getElementById('root');
 
   // Testing
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // Testing
-
-  const root = document.getElementById('root');
   // ReactDOM.render(<h1>Welcome to BreezeLnL</h1>, root);
   ReactDOM.render(<Root store={ store }/>, root);
 
