@@ -1,5 +1,6 @@
 import React from 'react';
 import GreetingContainer from './greeting_container';
+import IntroNavContainer from './navbar/intro_nav_bar_container';
 import SessionFormContainer from './session_form_container';
 import {Route} from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -7,7 +8,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => (
   <div>
     <header>
-      <h1>Breeze LnL</h1>
+      <IntroNavContainer />
       <GreetingContainer />
     </header>
 

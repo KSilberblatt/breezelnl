@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, Image } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -68,6 +68,11 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           Welcome to BreezeLnL!
+          <h1>Test</h1>
+          <img
+            className="splash"
+            src="https://i.imgur.com/tO9vhiH.jpg?1"
+            alt="Welcome to Breeze LnL!"></img>
           <br/>
           Please {this.props.formType} or {this.navLink()}
           {this.renderErrors()}
