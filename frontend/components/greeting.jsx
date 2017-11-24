@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SessionFormContainer from './session_form_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const sessionLinks = () => (
   <div>
-    <Link to="/login">Login</Link>
-    <Link to="/signup">Sign up!</Link>
+    <div className="greeting-container">
+      <AuthRoute path="/signup" component={SessionFormContainer} />
+      <AuthRoute path="/login" component={SessionFormContainer} />
+    </div>
+
   </div>
 );
 
