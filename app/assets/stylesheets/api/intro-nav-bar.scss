@@ -16,3 +16,23 @@
   width: 100%;
   height: 80px;
 }
+
+.nav-greeting{
+  color: #4EC5C1;
+  float: right;
+  display: flex;
+  flex-direction: row;
+}
+
+.logout-button{
+  margin-left: 20px;
+  color: #E2DBBE;
+  background-color: #EC576B;
+  padding: 10px;
+  box-shadow: 3px 3px 3px darkblue;
+  text-decoration: none;
+}
+.logout-button:hover {
+ background-color: rgb(250,102,122);
+ box-shadow: 1px 1px 1px darkblue;
+}
