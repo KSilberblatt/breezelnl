@@ -12,10 +12,11 @@ const App = () => (
     <header>
       <NavBar />
     </header>
-
-    <AuthRoute path="/signup" component={SignupContainer} />
-    <AuthRoute path="/login" component={SignupContainer} />
-    <ProtectedRoute exact path="/" component={()=><div />} />
+    <div className="content">
+      <AuthRoute path="/signup" component={SignupContainer} />
+      <AuthRoute path="/login" component={SignupContainer} />
+      <ProtectedRoute exact path="/" component={()=><div />} />
+    </div>
     <footer>
       <Footer />
     </footer>

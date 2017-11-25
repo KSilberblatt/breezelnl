@@ -1,0 +1,58 @@
+.authLinks{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.link{
+  color: #EC576B;
+}
+
+.form-fields{
+  font-size: 30px;
+}
+
+.login-input{
+  display: flex;
+  flex-direction: row;
+  font-size: 24px;
+}
+
+.login-submit{
+  flex: 1;
+}
+
+.login-submit-button{
+  width: 50%;
+  font-size: 100px;
+}
+
+.login-form{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.authlink {
+  padding: 0px 10px;
+  text-decoration: inherit;
+  display: inline-block;
+  border-left: solid 1px #EC576B;
+  border-right: solid 1px #EC576B;
+  font-family: 'Crimson Text', serif;
+  font-size: 30px;
+  letter-spacing: 2px;
+  line-height: 70px;
+  height: 100%;
+  word-spacing: 2px;
+  text-align: center;
+  margin: auto;
+  vertical-align: middle;
+
+ &:hover {
+    background-color: white;
+    cursor: pointer;
+  }
+}
