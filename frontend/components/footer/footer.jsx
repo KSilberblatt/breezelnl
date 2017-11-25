@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 
 
 const Footer = () => (
-  <div className ="footer">
-    <a href="www.github.com">Github</a>
-    <a href="www.linkedin.com">LinkedIn</a>
+  <div className="footer">
+    <div className="footer-content">
+      <a className="github" href="www.github.com">Github</a>
+      <a className="linkedin" href="www.linkedin.com">LinkedIn</a>
+    </div>
   </div>
 );
 

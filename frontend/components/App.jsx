@@ -1,6 +1,7 @@
 import React from 'react';
 import GreetingContainer from './greeting_container';
 import NavBar from './navbar/nav_bar_container';
+import Footer from './footer/footer_container';
 import SessionFormContainer from './session_form_container';
 import SignupContainer from './sign_up_container';
 import {Route} from 'react-router-dom';
@@ -15,6 +16,9 @@ const App = () => (
     <AuthRoute path="/signup" component={SignupContainer} />
     <AuthRoute path="/login" component={SignupContainer} />
     <ProtectedRoute exact path="/" component={()=><div />} />
+    <footer>
+      <Footer />
+    </footer>
   </div>
 );
 

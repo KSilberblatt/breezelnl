@@ -1,0 +1,18 @@
+.footer{
+  position: absolute;
+  left: 0px;
+  height: 80px;
+  width: 100%;
+  background-color: #EC576B;
+  text-align: center;
+}
+.footer-content{
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

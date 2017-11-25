@@ -5,6 +5,11 @@
   left: 0px;
   z-index: -2;
 }
+.signup{
+  height: 785px;
+  color: #E2DBBE;
+  text-align: center;
+}
 
 .greeting-container{
   position: absolute;
@@ -16,4 +21,13 @@
   z-index: -1;
   color: #E2DBBE;
   padding: 10px 20px;
+}
+
+.slogan {
+  width: 400px;
+  margin: 0;
+  position: absolute;
+  top: 45%;
+  left: 25%;
+  transform: translate(-50%, -50%);
 }

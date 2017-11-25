@@ -9,12 +9,18 @@ class Signup extends React.Component {
   }
   render(){
     return (
-      <div>
+      <div className="signup">
         <img
           className="splash"
           src="https://i.imgur.com/tO9vhiH.jpg?1"
           alt="Welcome to Breeze LnL!"></img>
         <br/>
+        <div className="slogan">
+          <h1>Welcome to BreezeLnL!</h1>
+          <br/>
+          <h2>Finding you a Lodge</h2>
+          <h2>&#39;n Lunch will be a Breeze</h2>
+        </div>
         <GreetingContainer />
       </div>
       );
