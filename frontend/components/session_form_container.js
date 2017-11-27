@@ -1,15 +1,12 @@
-import { login, signup, logout } from '../actions/session_actions';
+import { login, signup, logout, clearErrors } from '../actions/session_actions';
 import SessionForm from './session_form';
 import { connect } from 'react-redux';
 
 
-const mapStateToProps = (state, errors = state.errors.session) => {
-  if (!errors) {
-    errors = [];
-  }
+const mapStateToProps = (state) => {
   return {
     loggedIn: Boolean(state.session.currentUser),
-    errors: errors
+    errors: state.errors.session
   };
 };
 
@@ -18,6 +15,7 @@ const mapDispatchToProps = (dispatch, { location }) => {
   const processForm = (formType === 'login') ? login : signup;
   return {
     processForm: user => dispatch(processForm(user)),
+    clearErrors: () => dispatch(clearErrors()),
     formType
   };
 };

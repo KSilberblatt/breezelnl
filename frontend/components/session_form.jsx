@@ -10,6 +10,8 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -29,6 +31,25 @@ class SessionForm extends React.Component {
     const user = this.state;
     this.props.processForm({user});
   }
+  handleSubmitLink(e) {
+    const user = this.state;
+    this.props.processForm({user});
+  }
+  handleDemo(e) {
+    let eMail = "Demo";
+    let passWord = "password";
+    for ( let i = 0; i < eMail.length; i++ ) {
+        setTimeout(() => this.setState({
+            email: eMail.slice(0, i + 1)
+        }), i * 150);
+    }
+    for ( let j = 0; j < passWord.length; j++ ) {
+        setTimeout(() => this.setState({
+            password: passWord.slice(0, j + 1)
+        }), (j + 10) * 150);
+    }
+   setTimeout(() => this.handleSubmitLink(), 3200);
+  }
 
   navLink() {
     if (this.props.formType === 'login') {
@@ -36,7 +57,9 @@ class SessionForm extends React.Component {
         <div className="authLinks">
           <Link className="authlink link" to="/signup">Sign Up</Link>
           <text className="authlink">Log In</text>
-          <Link className="authlink link" to="/login">Demo User</Link>
+          <Link to="/login"
+            onClick={this.handleDemo}
+            className="authlink link">Demo</Link>
         </div>
       );
     } else {
@@ -44,10 +67,13 @@ class SessionForm extends React.Component {
         <div className="authLinks">
           <text className="authlink">Sign Up</text>
           <Link className="authlink link" to="/login">Log In</Link>
-          <Link className="authlink link" to="/login">Demo User</Link>
         </div>
       );
     }
+  }
+
+  componentWillMount(){
+    this.props.clearErrors();
   }
 
   renderUsernameField(){
@@ -62,8 +88,9 @@ class SessionForm extends React.Component {
     );}
   }
 
+
+
   renderErrors() {
-    console.log(this.props);
     return(
       <ul>
         {this.props.errors.map((error, i) => (

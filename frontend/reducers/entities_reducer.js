@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
-
-import session from './session_errors_reducer';
+import spots from './spots_reducer';
 
 export default combineReducers({
-  session
+  spots,
 });
