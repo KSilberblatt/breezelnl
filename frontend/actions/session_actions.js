@@ -15,12 +15,13 @@ export const receiveErrors = errors => ({
 });
 
 export const signup = (user1) => (dispatch) => (
-  SessionAPIUtil.signup(user1).then(
+  SessionAPIUtil.signup(user1).fail(err => (dispatch(receiveErrors(err.responseJSON)))).then(
     (user2) => (dispatch(receiveCurrentUser(user2))))
 );
 
 export const login = (user1) => (dispatch) => (
-  SessionAPIUtil.login(user1).then(
+  SessionAPIUtil.login(user1).fail(
+    err => (dispatch(receiveErrors(err.responseJSON)))).then(
     (user2) => (dispatch(receiveCurrentUser(user2))))
 );
 

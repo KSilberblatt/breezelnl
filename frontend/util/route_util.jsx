@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect, Route, withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => ({
-  loggedIn: Boolean(state.sessionReducer.currentUser),
+  loggedIn: Boolean(state.session.currentUser),
 });
 
 const Auth = ({ component: Component, path, loggedIn }) => (

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let preloadedState = undefined;
   if (window.currentUser) {
     preloadedState = {
-      sessionReducer: {
+      session: {
         currentUser: window.currentUser
       }
     };

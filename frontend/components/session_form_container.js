@@ -3,12 +3,12 @@ import SessionForm from './session_form';
 import { connect } from 'react-redux';
 
 
-const mapStateToProps = (state, errors = state.errorsReducer.session) => {
+const mapStateToProps = (state, errors = state.errors.session) => {
   if (!errors) {
     errors = [];
   }
   return {
-    loggedIn: Boolean(state.sessionReducer.currentUser),
+    loggedIn: Boolean(state.session.currentUser),
     errors: errors
   };
 };

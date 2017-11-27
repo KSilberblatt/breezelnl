@@ -7,7 +7,7 @@ import { logout } from '../../actions/session_actions';
 // to stay on a patter while I'm familiarizing myself with it.
 
 const mapStateToProps = (state) => ({
-  currentUser: state.sessionReducer.currentUser
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({
