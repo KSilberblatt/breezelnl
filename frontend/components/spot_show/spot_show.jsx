@@ -7,7 +7,6 @@ const SpotShow = ({ spot, spotId, fetchSpot }) => {
   const spots = {
     [spotId]: spot
   };
-  console.log(spot, spotId, fetchSpot(spotId));
   return(
     <div className="single-spot-show">
       <div className="single-spot-map">
