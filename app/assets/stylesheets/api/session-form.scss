@@ -4,10 +4,6 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.link{
-  color: #EC576B;
-  text-shadow: 2px 2px black;
-}
 
 .form-fields{
   font-size: 30px;
@@ -82,11 +78,13 @@
 }
 
 .authlink {
+  color: rgb(226,219,190);
   padding: 0px 10px;
+  border-radius: 10px;
   text-decoration: inherit;
   display: inline-block;
-  border-left: solid 1px #EC576B;
-  border-right: solid 1px #EC576B;
+  border: solid 1px #EC576B;
+  background: rgba(236, 87, 107, 1);
   font-family: 'Helvetica', serif;
   font-size: 30px;
   letter-spacing: 2px;
@@ -98,7 +96,11 @@
   vertical-align: middle;
 
  &:hover {
-    background-color: white;
+    background-color: rgb(236,87,107);
     cursor: pointer;
   }
+}
+.link{
+  color: rgb(113,109,95);
+  background: rgba(236, 87, 107, .75);
 }
