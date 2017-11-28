@@ -6,7 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+User.destroy_all
+Spot.destroy_all
 
 User.create!(
   id: 92118,
@@ -14,11 +15,16 @@ User.create!(
   email: "Kevin Silberblatt",
   password: "adminpassword"
 )
+User.create!(
+  username: "Demo",
+  email: "Demo",
+  password: "password"
+)
 
 Spot.create!(
   owner_id: 92118,
   address: '67 Montego Ct, Coronado, CA 92118',
-  image_url: 'https://ssl.cdn-redfin.com/photo/48/mbpaddedwide/287/genMid.170025287_19_0.jpg',
+  image_url: 'https://blog.rent.com/wp-content/uploads/2014/12/Renting-a-Condo-vs-Apartment.jpg',
   category: 'Condominium',
   title: 'Captivating Coastal Condo',
   price: '200',
