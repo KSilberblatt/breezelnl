@@ -12,7 +12,7 @@ class Signup extends React.Component {
       <div className="signup">
         <img
           className="splash"
-          src="https://i.imgur.com/tO9vhiH.jpg?1"
+          src="https://www.claytonhotels.com/wp-content/uploads/2017/10/Clayton-Hotel-Birmingham.jpg"
           alt="Welcome to Breeze LnL!"></img>
         <br/>
         <div className="slogan">

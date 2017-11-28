@@ -1,5 +1,7 @@
 .splash {
+  border-top: 3px solid darkblue;
   width: 1920px;
+  height: 874px;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -10,8 +12,16 @@
   color: #E2DBBE;
   text-align: center;
 }
-
+.login-form-box{
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .greeting-container{
+  border-radius: 20px;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 2px 2px black;
   position: absolute;
   top: 25%;
   left: 60%;
@@ -22,12 +32,28 @@
   color: #E2DBBE;
   padding: 10px 20px;
 }
-
+input[type=text]:focus {
+    border: 3px solid #E2DBBE;
+}
+input[type=password]:focus {
+    border: 3px solid #E2DBBE;
+}
 .slogan {
-  width: 400px;
+  width: 450px;
   margin: 0;
   position: absolute;
   top: 45%;
   left: 25%;
   transform: translate(-50%, -50%);
+  text-shadow: 2px 2px black;
+}
+
+
+.slogan h1{
+  font-size: 36px
+
+}
+.slogan h2{
+  font-size: 24px
+
 }

@@ -80,6 +80,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'signup') { return(
       <label><br/>Username:
         <input type="text"
+          placeholder="John Doe"
           value={this.state.username}
           onChange={this.update('username')}
           className="login-input"
@@ -102,6 +103,25 @@ class SessionForm extends React.Component {
     );
   }
 
+  renderSubmitButton(){
+    if (this.props.formType === 'signup') {
+      return(
+        <button
+          className="login-submit-button"
+          type="submit"
+          ><span>Submit!</span></button>
+      );
+    }
+    else{
+      return(
+        <button
+          className="login-submit-button"
+          type="submit"
+          ><span>Log In!</span></button>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="login-form-container">
@@ -116,6 +136,7 @@ class SessionForm extends React.Component {
                 <input
                   className="login-input"
                   type="text"
+                  placeholder="johndoe@email.com"
                   value={this.state.email}
                   onChange={this.update('email')}
                   className="login-input"
@@ -133,10 +154,7 @@ class SessionForm extends React.Component {
             </div>
             <br/>
             <div className="login-submit" >
-              <input
-                className="login-submit-button"
-                type="submit"
-                value="Submit" />
+              {this.renderSubmitButton()}
             </div>
           </div>
         </form>
