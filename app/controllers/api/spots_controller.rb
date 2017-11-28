@@ -2,7 +2,7 @@ class Api::SpotsController < ApplicationController
   def index
     spots = Spot.all
     @spots = spots #filter here later
-    render :index
+    render json: @spots
   end
 
   def show

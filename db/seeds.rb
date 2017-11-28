@@ -22,6 +22,7 @@ User.create!(
 )
 
 Spot.create!(
+  id: 1,
   owner_id: 92118,
   address: '67 Montego Ct, Coronado, CA 92118',
   image_url: 'https://blog.rent.com/wp-content/uploads/2014/12/Renting-a-Condo-vs-Apartment.jpg',
