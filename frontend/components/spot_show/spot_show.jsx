@@ -20,16 +20,28 @@ class SpotShow extends React.Component{
   render(){
     const { spot } = this.props;
     return (
-      <div>
-        <ul className="spot-list">
-          <img className="index-image" src={spot.image_url}/>
-          <li>Owner: {spot.user}</li>
-          <li>Title: {spot.title}</li>
-          <li>Address: {spot.address}</li>
-          <li>Category: {spot.category}</li>
-          <li>Price: {spot.price}</li>
-          <li>Description: {spot.description}</li>
-        </ul>
+      <div className="spot-index">
+        <div className="index-image">
+          <img src={spot.image_url}/>
+        </div>
+        <div className="below-image">
+          <div className="description-feed">
+            <ul className="spot-nav-bar">
+              <li><a>Overview</a></li>
+              <li><a>Reviews</a></li>
+              <li><a>The Host</a></li>
+              <li><a>Location</a></li>
+            </ul>
+            <ul className="spot-overview">
+              <li><h1>{spot.title}</h1></li>
+              <li><h2>{spot.category}</h2></li>
+              <li><p>{spot.description}</p></li>
+            </ul>
+          </div>
+          <div className="booking-form">
+            <input type="textarea"></input>
+          </div>
+        </div>
       </div>
     );
   }
