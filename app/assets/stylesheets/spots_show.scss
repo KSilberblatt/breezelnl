@@ -48,8 +48,15 @@
 
 .spot-nav-bar li {
   font-size: 12px;
-  list-style: circle;
-  border: 2px solid black;
+  list-style: disc;
+  padding: 10px 10px;
+  margin-left: 20px;
+
+}
+.spot-nav-bar li:first-child {
+  font-size: 12px;
+  list-style: none;
+
   padding: 10px 10px;
 
 }
