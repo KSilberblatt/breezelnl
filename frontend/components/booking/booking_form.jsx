@@ -5,9 +5,8 @@ class BookingForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email:"",
-      username: "",
-      password: ""
+      user_id: this.state.userId,
+      spot_id: this.state.spotId
     };
     this.handleSubmit = this.handleSubmit.bind(this);
 
@@ -35,45 +34,18 @@ class BookingForm extends React.Component {
     this.props.processForm({user});
   }
 
-  navLink() {
-    if (this.props.formType === 'login') {
-      return (
-        <div className="authLinks">
-          <Link className="authlink link" to="/signup">Sign Up</Link>
-          <text className="authlink">Log In</text>
-          <Link to="/login"
-            onClick={this.handleDemo}
-            className="authlink link">Demo</Link>
-        </div>
-      );
-    } else {
-      return (
-        <div className="authLinks">
-          <text className="authlink">Sign Up</text>
-          <Link className="authlink link" to="/login">Log In</Link>
-        </div>
-      );
-    }
+  renderInfo() {
+    return (
+      <div className="booking-info">
+        <h3>Price per night</h3>
+        <h4>Average rating: </h4>
+      </div>
+    );
   }
 
   componentWillMount(){
     this.props.clearErrors();
   }
-
-  renderUsernameField(){
-    if (this.props.formType === 'signup') { return(
-      <label><br/>Username:
-        <input type="text"
-          placeholder="John Doe"
-          value={this.state.username}
-          onChange={this.update('username')}
-          className="login-input"
-        />
-      </label>
-    );}
-  }
-
-
 
   renderErrors() {
     return(
@@ -88,61 +60,37 @@ class BookingForm extends React.Component {
   }
 
   renderSubmitButton(){
-    if (this.props.formType === 'signup') {
-      return(
-        <button
-          className="login-submit-button"
-          type="submit"
-          ><span>Submit!</span></button>
-      );
-    }
-    else{
-      return(
-        <button
-          className="login-submit-button"
-          type="submit"
-          ><span>Log In!</span></button>
-      );
-    }
+    return(
+      <button
+        className="login-submit-button"
+        type="submit"
+        ><span>Request to Book!</span></button>
+    );
   }
 
   render() {
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br/>
-          {this.navLink()}
-          <br/>
-          {this.renderErrors()}
-          <div className="login-form">
-            <br/>
-            <div className="form-fields">
-              <label>Email:
-                <input
-                  className="login-input"
-                  type="text"
-                  placeholder="johndoe@email.com"
-                  value={this.state.email}
-                  onChange={this.update('email')}
-                  className="login-input"
-                />
-              </label>
-              {this.renderUsernameField()}
-              <br/>
-              <label>Password:
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.update('password')}
-                  className="login-input"
-                />
-              </label>
-            </div>
-            <br/>
-            <div className="login-submit" >
-              {this.renderSubmitButton()}
-            </div>
-          </div>
-        </form>
+      <div className="booking-form-container">
+        {this.renderInfo()}
+        <div className="dates-guest-form">
+          <label>Check In
+            <input id="start-date" type="datetime-local"/>
+          </label>
+          <label>Check Out
+            <input id="end-date" type="datetime-local"/>
+          </label>
+          <select className="guests" name="guests">
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5">5 Guests</option>
+          </select>
+
+        </div>
+        {this.renderSubmitButton()}
+        <p>{this.user_id}</p>
+        <p>{this.spot_id}</p>
       </div>
     );
   }
