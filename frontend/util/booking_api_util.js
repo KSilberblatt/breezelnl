@@ -9,16 +9,16 @@ export const book = (booking) => (
 export const edit = (booking) => (
   $.ajax({
     method: 'PATCH',
-    url: '/api/bookings',
+    url: '/api/bookings/' + booking.id,
     data: booking
   })
 );
 
 
 
-export const deleteBooking = () => (
+export const deleteBooking = (id) => (
   $.ajax({
     method: 'DELETE',
-    url: '/api/bookings'
+    url: '/api/bookings/' + id
   })
 );

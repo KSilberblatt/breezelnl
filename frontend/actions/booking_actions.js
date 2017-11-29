@@ -1,35 +1,34 @@
-import * as BookingAPIUtil from '../util/booking_api_util';
+import * as APIUtil from '../util/booking_api_util';
 
 
-export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
-export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
-export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
+export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';
 
-export const clearErrors = () =>({
-  type: CLEAR_ERRORS
+export const receiveSpots = bookings => ({
+  type: RECEIVE_BOOKINGS,
+  bookings
 });
 
-export const receiveCurrentUser = (currentUser) => ({
-  type: RECEIVE_CURRENT_USER,
-  currentUser
+export const receiveSpot = booking => ({
+  type: RECEIVE_BOOKING,
+  booking
 });
 
-export const receiveErrors = errors => ({
-  type: RECEIVE_SESSION_ERRORS,
-  errors
-});
 
-export const signup = (user1) => (dispatch) => (
-  SessionAPIUtil.signup(user1).then((user2) => (
-    dispatch(receiveCurrentUser(user2))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
+export const fetchSpots = filters => dispatch => (
+  APIUtil.fetchSpots(filters).then(bookings => (
+    dispatch(receiveSpots(bookings))
   ))
 );
 
-export const logout = () => (dispatch) => (
-  SessionAPIUtil.logout().then(user => (
-    dispatch(receiveCurrentUser(null))
+export const fetchSpot = id => dispatch => (
+  APIUtil.fetchSpot(id).then(booking => (
+    dispatch(receiveSpot(booking))
   ))
 );
-window.logout = logout; // take out eventually
+
+export const createSpot = booking => dispatch => (
+  APIUtil.createSpot(booking).then(booking => (
+    dispatch(receiveSpot(booking))
+  ))
+);
