@@ -16,27 +16,21 @@
     opacity: 0;
 }
 
-.rating-star {
-    position: relative;
-    float: right;
-    display: block;
-    width: 16px;
-    height: 16px;
-    background-image: url('https://cdn0.iconfinder.com/data/icons/IS_Christmas/512/christmas_star.png') 0 -16px;
-}
 
 .rating:hover .rating-star:hover,
 .rating:hover .rating-star:hover ~ .rating-star,
 .rating-input:checked ~ .rating-star {
-    background-position: 0 0;
+  color: gold;
+
 }
 
 .rating-star,
 .rating:hover .rating-star {
-    position: relative;
-    float: right;
-    display: block;
-    width: 16px;
-    height: 16px;
-    background-image: url('https://cdn0.iconfinder.com/data/icons/IS_Christmas/512/christmas_star.png') 0 -16px;
+  cursor: pointer;
+  position: relative;
+  float: right;
+  display: block;
+  width: 16px;
+  height: 16px;
+  color: black;
 }

@@ -38,7 +38,29 @@ class ReviewForm extends React.Component {
   renderHeader() {
     return (
       <div className="review-form-header">
-        <h3>Review: </h3>
+        <h3>Leave a Review!    </h3>
+          <span className="rating">
+            <input type="radio" className="rating-input"
+                   id="rating-input-1-5" name="rating-input-1" />
+                 <label htmlFor="rating-input-1-5"
+                   className="rating-star">&#9733;</label>
+            <input type="radio" className="rating-input"
+                   id="rating-input-1-4" name="rating-input-1" />
+                 <label htmlFor="rating-input-1-4"
+                   className="rating-star">&#9733;</label>
+            <input type="radio" className="rating-input"
+                   id="rating-input-1-3" name="rating-input-1" />
+                 <label htmlFor="rating-input-1-3"
+                   className="rating-star">&#9733;</label>
+            <input type="radio" className="rating-input"
+                   id="rating-input-1-2" name="rating-input-1" />
+                 <label htmlFor="rating-input-1-2"
+                   className="rating-star">&#9733;</label>
+                 <input type="radio" className="rating-input" checked
+                   id="rating-input-1-1" name="rating-input-1" />
+                 <label htmlFor="rating-input-1-1"
+                   className="rating-star">&#9733;</label>
+          </span>
       </div>
     );
   }
@@ -71,25 +93,8 @@ class ReviewForm extends React.Component {
   render() {
     return (
       <div className="booking-form-container">
-        {this.renderInfo()}
-        <div className="dates-guest-form">
-          <span class="rating">
-            <input type="radio" class="rating-input"
-                   id="rating-input-1-5" name="rating-input-1" />
-            <label for="rating-input-1-5" class="rating-star"></label>
-            <input type="radio" class="rating-input"
-                   id="rating-input-1-4" name="rating-input-1" />
-            <label for="rating-input-1-4" class="rating-star"></label>
-            <input type="radio" class="rating-input"
-                   id="rating-input-1-3" name="rating-input-1" />
-            <label for="rating-input-1-3" class="rating-star"></label>
-            <input type="radio" class="rating-input"
-                   id="rating-input-1-2" name="rating-input-1" />
-            <label for="rating-input-1-2" class="rating-star"></label>
-            <input type="radio" class="rating-input"
-                   id="rating-input-1-1" name="rating-input-1" />
-            <label for="rating-input-1-1" class="rating-star"></label>
-          </span>
+        {this.renderHeader()}
+        <div className="rating-form">
           <textarea />
         </div>
         {this.renderSubmitButton()}

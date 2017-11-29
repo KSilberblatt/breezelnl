@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BookingForm from '../booking/booking_form';
+import ReviewForm from '../review/review_form';
 
 class SpotShow extends React.Component{
   constructor( props ) {
@@ -41,6 +42,12 @@ class SpotShow extends React.Component{
               <li><h2>{spot.category}</h2></li>
               <li><p>{spot.description}</p></li>
             </ul>
+            <br/>
+            <div className="review-form">
+              <ReviewForm spotId={this.spotId}
+                currentUser={this.currentUser}
+                clearErrors={this.clearErrors}/>
+            </div>
           </div>
           <div className="booking-form">
             <BookingForm spotId={this.spotId}
