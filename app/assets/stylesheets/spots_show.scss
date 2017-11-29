@@ -6,6 +6,7 @@
 }
 .index-image img{
   position:relative;
+  width: 2048px;
   top: -400px;
   left: 0;
 }
@@ -13,10 +14,12 @@
   display: inline-block;
   padding: 10px 0px;
   font-size: 48px;
+  font-size: 2.5vw;
   font-weight: bold;
 }
 .spot-overview h2{
   font-size: 32px;
+  font-size: 2vw;
   color: grey;
   font-style: italic;
   padding-left: 24px;
