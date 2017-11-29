@@ -4,9 +4,10 @@ import { Link, withRouter, Image } from 'react-router-dom';
 class BookingForm extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = {
-      user_id: this.state.userId,
-      spot_id: this.state.spotId
+      user_id: props.currentUser.id,
+      spot_id: props.spot.spotId
     };
     this.handleSubmit = this.handleSubmit.bind(this);
 

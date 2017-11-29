@@ -5,6 +5,7 @@ import Footer from './footer/footer_container';
 import SessionFormContainer from './session_form_container';
 import SignupContainer from './sign_up_container';
 import SpotShowContainer from './spot_show/spot_show_container';
+import BookingFormContainer from './booking/booking_form_container';
 import {Route} from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
@@ -16,6 +17,8 @@ const App = () => (
     <div className="content">
       <ProtectedRoute exact path="/spots/:spotId"
         component={SpotShowContainer} />
+      <ProtectedRoute exact path="/spots/:spotId"
+        component={BookingFormContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={SignupContainer} />
       <ProtectedRoute exact path="/" component={()=><div />} />

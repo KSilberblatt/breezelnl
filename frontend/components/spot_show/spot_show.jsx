@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SpotDetail from './spot_detail';
 
 class SpotShow extends React.Component{
   constructor( props ) {
@@ -39,7 +38,7 @@ class SpotShow extends React.Component{
             </ul>
           </div>
           <div className="booking-form">
-            <input type="textarea"></input>
+
           </div>
         </div>
       </div>
