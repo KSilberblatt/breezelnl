@@ -74,10 +74,10 @@ class BookingForm extends React.Component {
         {this.renderInfo()}
         <div className="dates-guest-form">
           <label>Check In
-            <input id="start-date" type="datetime-local"/>
+            <input id="start-date" type="date"/>
           </label>
           <label>Check Out
-            <input id="end-date" type="datetime-local"/>
+            <input id="end-date" type="date"/>
           </label>
           <select className="guests" name="guests">
             <option value="1">1 Guest</option>
