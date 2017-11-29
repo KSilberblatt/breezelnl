@@ -7,7 +7,7 @@ class BookingForm extends React.Component {
     console.log(props);
     this.state = {
       user_id: props.currentUser.id,
-      spot_id: props.spot.spotId
+      spot_id: props.spotId
     };
     this.handleSubmit = this.handleSubmit.bind(this);
 

@@ -17,8 +17,6 @@ const App = () => (
     <div className="content">
       <ProtectedRoute exact path="/spots/:spotId"
         component={SpotShowContainer} />
-      <ProtectedRoute exact path="/spots/:spotId"
-        component={BookingFormContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={SignupContainer} />
       <ProtectedRoute exact path="/" component={()=><div />} />

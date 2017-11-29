@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import BookingForm from '../booking/booking_form';
 
 class SpotShow extends React.Component{
   constructor( props ) {
+    console.log(props, "<----");
     super(props);
+    this.spotId=props.spotId;
+    this.currentUser=props.currentUser;
+    this.clearErrors=props.clearErrors;
     }
 
   componentDidMount(){
@@ -38,7 +43,9 @@ class SpotShow extends React.Component{
             </ul>
           </div>
           <div className="booking-form">
-
+            <BookingForm spotId={this.spotId}
+              currentUser={this.currentUser}
+              clearErrors={this.clearErrors}/>
           </div>
         </div>
       </div>

@@ -3,6 +3,11 @@ import * as APIUtil from '../util/review_api_util';
 
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+
+export const clearErrors = () =>({
+  type: CLEAR_ERRORS
+});
 
 export const receiveReviews = reviews => ({
   type: RECEIVE_REVIEWS,
