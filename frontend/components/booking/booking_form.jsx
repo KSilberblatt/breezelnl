@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter, Image } from 'react-router-dom';
 
-class SessionForm extends React.Component {
+class BookingForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,7 +10,6 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDemo = this.handleDemo.bind(this);
 
   }
 
@@ -34,21 +33,6 @@ class SessionForm extends React.Component {
   handleSubmitLink(e) {
     const user = this.state;
     this.props.processForm({user});
-  }
-  handleDemo(e) {
-    let eMail = "Demo";
-    let passWord = "password";
-    for ( let i = 0; i < eMail.length; i++ ) {
-        setTimeout(() => this.setState({
-            email: eMail.slice(0, i + 1)
-        }), i * 150);
-    }
-    for ( let j = 0; j < passWord.length; j++ ) {
-        setTimeout(() => this.setState({
-            password: passWord.slice(0, j + 1)
-        }), (j + 10) * 150);
-    }
-   setTimeout(() => this.handleSubmitLink(), 3200);
   }
 
   navLink() {
@@ -164,4 +148,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default withRouter(SessionForm);
+export default withRouter(BookingForm);

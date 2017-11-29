@@ -8,6 +8,8 @@
 
 User.destroy_all
 Spot.destroy_all
+Review.destroy_all
+Booking.destroy_all
 
 User.create!(
   id: 92118,
@@ -129,4 +131,54 @@ Spot.create!(
   title: '10',
   price: '200',
   description: "This Captivating Coastal Condo is a glorious getaway geared towards freehearted families looking for a safe space for the kids to roam in a gated community while the parents have a romantic getaway at Loews Resort."
+)
+
+Review.create!(
+  id: 101,
+  user_id: 92118,
+  spot_id: 1,
+  rating: 5,
+  description: "My stay was super nice and super chill"
+)
+Review.create!(
+  id: 102,
+  user_id: 92118,
+  spot_id: 1,
+  rating: 4,
+  description: "My stay was really nice and really chill"
+)
+Review.create!(
+  id: 103,
+  user_id: 92118,
+  spot_id: 1,
+  rating: 3,
+  description: "My stay was nice and chill"
+)
+Review.create!(
+  id: 203,
+  user_id: 92118,
+  spot_id: 2,
+  rating: 3,
+  description: "My stay was nice and chill here too"
+)
+Booking.create!(
+  id: 11,
+  user_id: 92118,
+  spot_id: 1,
+  :start_date => DateTime.strptime("01/14/2018 8:00", "%m/%d/%Y %H:%M"),
+  :end_date => DateTime.strptime("01/14/2018 9:00", "%m/%d/%Y %H:%M")
+)
+Booking.create!(
+  id: 12,
+  user_id: 92118,
+  spot_id: 1,
+  :start_date => DateTime.strptime("01/20/2018 8:00", "%m/%d/%Y %H:%M"),
+  :end_date => DateTime.strptime("01/21/2018 9:00", "%m/%d/%Y %H:%M")
+)
+Booking.create!(
+  id: 21,
+  user_id: 92118,
+  spot_id: 2,
+  :start_date => DateTime.strptime("01/14/2018 8:00", "%m/%d/%Y %H:%M"),
+  :end_date => DateTime.strptime("01/14/2018 9:00", "%m/%d/%Y %H:%M")
 )

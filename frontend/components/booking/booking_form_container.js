@@ -1,4 +1,3 @@
-import { login, signup, logout, clearErrors } from '../../actions/booking_actions';
 import { connect } from 'react-redux';
 
 import { fetchBooking } from '../../actions/booking_actions';
