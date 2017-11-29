@@ -1,26 +1,26 @@
 import { login, signup, logout, clearErrors } from '../../actions/booking_actions';
-import SessionForm from './booking_form';
 import { connect } from 'react-redux';
 
+import { fetchBooking } from '../../actions/booking_actions';
+import { selectBooking } from '../../reducers/selectors';
+import BookingForm from './booking_form';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, { match }) => {
+  const userId = parseInt(match.params.userId);
+  const spotId = parseInt(match.params.spotId);
+  const bookingId = parseInt(match.params.bookingId);
+  const booking = selectBooking(state.entities, match.params.bookingId);
   return {
-    loggedIn: Boolean(state.session.currentUser),
-    errors: state.errors.session
+    bookingId,
+    booking
   };
 };
 
-const mapDispatchToProps = (dispatch, { location }) => {
-  const formType = location.pathname.slice(1);
-  const processForm = (formType === 'login') ? login : signup;
-  return {
-    processForm: user => dispatch(processForm(user)),
-    clearErrors: () => dispatch(clearErrors()),
-    formType
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  fetchBooking: id => dispatch(fetchBooking(id))
+});
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SessionForm);
+)(BookingForm);
