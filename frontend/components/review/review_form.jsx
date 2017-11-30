@@ -101,30 +101,6 @@ class ReviewForm extends React.Component {
     );
   }
 
-  renderReviews(reviews){
-    console.log(this.props.reviews, "<---------!reviews");
-    console.log(this.props, "<---------!2");
-    return (
-      <div>
-        {reviews.forEach( (myReview) => {
-          this.renderReview(myReview);
-        })}
-      </div>
-    );
-  }
-
-  renderReview(review){
-    let stars ="";
-    for (let i = 0; i < review.rating; i++) {
-      stars += "&#9733;";
-    }
-    return(
-      <div>
-        <p>{stars}</p>
-        <p>{review.description}</p>
-      </div>
-    );
-  }
 
   render() {
     return (

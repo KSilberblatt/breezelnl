@@ -4,9 +4,8 @@ Rails.application.routes.draw do
   root to: 'static_pages#root' #what is the difference between this and just root?
 
   namespace :api, defaults: { format: :json } do
-    resources :spots, only: [:index, :show] do
-      resources :reviews, only: [:index, :show, :create]
-    end
+    resources :spots, only: [:index, :show]
+    resources :reviews, only: [:index, :show, :create]
     resources :bookings, only: [:index, :show, :create]
 
     resources :users, only: [:create, :index]                 # sign up

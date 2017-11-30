@@ -12,21 +12,52 @@ class SpotShow extends React.Component{
     this.currentUser=props.currentUser;
     this.clearErrors=props.clearErrors;
     this.submitBooking=props.submitBooking;
+    this.fetchReviews=this.props.fetchReviews();
     }
 
   componentDidMount(){
     this.props.fetchSpot(this.props.match.params.spotId);
+    this.props.fetchReviews();
   }
 
   componentWillReceiveProps(nextProps){
     if (this.props.match.params.spotId !== nextProps.match.params.spotId) {
       this.props.fetchSpot(nextProps.match.params.spotId);
     }
+    if (this.props.match.params.spotId !== nextProps.match.params.spotId) {
+      this.props.fetchReviews();
+    }
+
+  }
+
+  renderReviews(){
+
+    return (
+      <ul className="errors">
+        {this.props.reviews.map((review, i) => (
+          <li key={`review-${i}`}>
+            {this.renderReview(review)}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  renderReview(review){
+    let stars ="";
+    for (let i = 0; i < review.rating; i++) {
+      stars += "&#9733;";
+    }
+    return(
+      <div>
+        <p>{stars}</p>
+        <p>{review.description}</p>
+      </div>
+    );
   }
 
   render(){
     const { spot } = this.props;
-    console.log(spot);
     return (
       <div className="spot-show">
         <div className="spot-image">
@@ -50,6 +81,7 @@ class SpotShow extends React.Component{
             </ul>
             <br/>
             <div className="review-form">
+              {this.renderReviews()}
               <ReviewForm spotId={this.spotId}
                 submitReview={this.props.submitReview}
                 currentUser={this.props.currentUser}

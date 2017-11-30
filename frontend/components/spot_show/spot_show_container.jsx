@@ -11,12 +11,14 @@ const mapStateToProps = (state, { match }) => {
   const spot = selectSpot(state.entities, match.params.spotId);
   const errors = state.errors.booking;
   const reviewErrors = state.errors.review;
+  const reviews = state.entities.reviews;
   return {
     spotId,
     spot,
     currentUser,
     errors,
-    reviewErrors
+    reviewErrors,
+    reviews
   };
 };
 
