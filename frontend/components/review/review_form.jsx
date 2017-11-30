@@ -19,6 +19,11 @@ class ReviewForm extends React.Component {
   }
 
   update(field) {
+    if(field === "rating"){
+      return e => this.setState({
+        [field]: parseInt(e.currentTarget.value)
+      });
+    }
     return e => this.setState({
       [field]: e.currentTarget.value
     });
@@ -26,14 +31,16 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = this.state;
-    this.props.processForm({user});
+    console.log(this.state);
+    const review = this.state;
+    this.props.submitReview({review});
   }
 
   renderHeader() {
     return (
       <div className="review-form-header">
         <h3>Leave a Review!    </h3>
+          {this.renderErrors()}
           <span className="rating">
             <input type="radio" value="5"
               onChange={this.update('rating')}
@@ -61,7 +68,7 @@ class ReviewForm extends React.Component {
                    className="rating-star">&#9733;</label>
             <input type="radio" value="1"
               onChange={this.update('rating')}
-              className="rating-input" checked
+              className="rating-input"
                    id="rating-input-1-1" name="rating" />
                  <label htmlFor="rating-input-1-1"
                    className="rating-star">&#9733;</label>
@@ -97,12 +104,18 @@ class ReviewForm extends React.Component {
 
   render() {
     return (
-      <div className="booking-form-container">
-        {this.renderHeader()}
-        <div className="rating-form">
-          <textarea />
-        </div>
-        {this.renderSubmitButton()}
+      <div>
+
+        <form onSubmit={this.handleSubmit}
+          className="booking-form-container">
+          {this.renderHeader()}
+          <div className="rating-form">
+            <input type="textarea"
+              onChange={this.update('description')}
+              />
+          </div>
+          {this.renderSubmitButton()}
+        </form>
       </div>
     );
   }

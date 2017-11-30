@@ -5,7 +5,6 @@ import ReviewForm from '../review/review_form';
 
 class SpotShow extends React.Component{
   constructor( props ) {
-    console.log(props, "<----");
 
     super(props);
     this.errors=props.errors;
@@ -48,8 +47,10 @@ class SpotShow extends React.Component{
             <br/>
             <div className="review-form">
               <ReviewForm spotId={this.spotId}
-                currentUser={this.currentUser}
-                clearErrors={this.clearErrors}/>
+                submitReview={this.props.submitReview}
+                currentUser={this.props.currentUser}
+                errors={this.props.reviewErrors}
+                clearErrors={this.props.clearReviewErrors}/>
             </div>
           </div>
           <div className="booking-form">

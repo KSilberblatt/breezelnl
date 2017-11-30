@@ -2,7 +2,7 @@ class Api::ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save
-      render "api/spots/:spot_id"
+      render :show
     else
       render json: @review.errors.full_messages, status: 422
     end
@@ -22,6 +22,6 @@ class Api::ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(
-      :user_id, :spot_id, :start_date, :end_date)
+      :user_id, :spot_id, :rating, :description)
   end
 end
