@@ -27,8 +27,8 @@ class SpotShow extends React.Component{
   render(){
     const { spot } = this.props;
     return (
-      <div className="spot-index">
-        <div className="index-image">
+      <div className="spot-show">
+        <div className="spot-image">
           <img src={spot.image_url}/>
         </div>
         <div className="below-image">

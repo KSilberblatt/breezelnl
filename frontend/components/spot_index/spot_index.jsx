@@ -22,33 +22,36 @@ class SpotIndex extends React.Component{
     console.log(typeof(this.props.spots.length));
     if (typeof(this.props.spots.length) === "undefined"){
       return(
-        <div>EMPTY</div>
+        <div></div>
       );
     }
     console.log(this.props.spots, "once");
     return(
-      <div>
+      <div className="spot-index">
         {this.props.spots.map((spot) => (
           this.renderSpot(spot)
         ))}
       </div>
     );
   }
+  handlePath(id){
+    return "/spots/"+id;
+  }
   renderSpot(spot){
     return (
-      <div className="spot-container">
+      <Link to={this.handlePath(spot.id)} className="spot-container">
         <img className="image-thumbnail" src={spot.image_url} />
         <h1 className="spot-category">{spot.category}</h1>
         <h1 className="spot-title">{spot.title}</h1>
         <h1 className="spot-price">From ${spot.price} per night</h1>
 
-      </div>
+      </Link>
     );
   }
   render(){
     console.log(this.props.spots, "<--");
     return (
-      <div className="spot-index">
+      <div>
         {this.renderSpots()}
       </div>
     );

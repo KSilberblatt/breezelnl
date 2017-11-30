@@ -21,10 +21,11 @@ const App = () => (
           component={SpotShowContainer} />
         <ProtectedRoute exact path="/spots"
           component={SpotIndexContainer} />
+      </Switch>
         <AuthRoute path="/signup" component={SignupContainer} />
         <AuthRoute path="/login" component={SignupContainer} />
         <ProtectedRoute exact path="/" component={()=><div />} />
-      </Switch>
+
     </div>
     <footer>
       <Footer />

@@ -1,10 +1,10 @@
-.index-image{
+.spot-image{
   max-width: 100%;
   max-height: 600px;
   display: block;
   overflow: hidden;
 }
-.index-image img{
+.spot-image img{
   position:relative;
   width: 2048px;
   top: -400px;
@@ -25,7 +25,7 @@
   padding-left: 24px;
 }
 
-.spot-index{
+.spot-show{
   display: flex;
   flex-direction: column;
   justify-content: center;
