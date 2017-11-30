@@ -56,6 +56,7 @@ class SpotShow extends React.Component{
           </div>
           <div className="booking-form">
             <BookingForm spotId={this.props.spotId}
+              spot = {spot}
               submitBooking={this.props.submitBooking}
               currentUser={this.props.currentUser}
               errors={this.props.errors}

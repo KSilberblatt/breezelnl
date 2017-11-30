@@ -130,6 +130,7 @@ class SessionForm extends React.Component {
           {this.navLink()}
           <br/>
           {this.renderErrors()}
+          <br/>
           <div className="login-form">
             <br/>
             <div className="form-fields">

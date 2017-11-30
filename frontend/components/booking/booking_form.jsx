@@ -37,8 +37,10 @@ class BookingForm extends React.Component {
   renderInfo() {
     return (
       <div className="booking-info">
-        <h3>Price per night</h3>
-        <h4>Average rating: </h4>
+        <h3 className="booking-price"><strong
+          className="price-number">${this.props.spot.price}
+        </strong> per night</h3>
+      <h4 className="booking-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</h4>
       </div>
     );
   }
@@ -74,25 +76,32 @@ class BookingForm extends React.Component {
       <div className="booking-form-container">
         {this.renderInfo()}
         <form onSubmit={this.handleSubmit} className="dates-guest-form">
-          <label>Check In
-            <input
-              onChange={this.update('start_date')}
-              id="start-date" type="date"/>
+          <div className="dates-form">
+            <label>Check In
+              <input
+                className="date-calander"
+                onChange={this.update('start_date')}
+                id="start-date" type="date"/>
+            </label>
+            <label>Check Out
+              <input
+                className="date-calander"
+                onChange={this.update('end_date')}
+                id="end-date" type="date"/>
+            </label>
+          </div>
+        <br/>
+          <label>Guests: <br/> <br/>
+            <select value={this.state.num_guests}
+              onChange={this.update('num_guests')}
+              className="guests" name="guests">
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5">5 Guests</option>
+            </select>
           </label>
-          <label>Check Out
-            <input
-              onChange={this.update('end_date')}
-              id="end-date" type="date"/>
-          </label>
-          <select value={this.state.num_guests}
-            onChange={this.update('num_guests')}
-            className="guests" name="guests">
-            <option value="1">1 Guest</option>
-            <option value="2">2 Guests</option>
-            <option value="3">3 Guests</option>
-            <option value="4">4 Guests</option>
-            <option value="5">5 Guests</option>
-          </select>
           <br/>
           {this.renderErrors()}
           <br/>
