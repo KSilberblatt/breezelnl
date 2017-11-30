@@ -16,11 +16,11 @@ const Greeting = ({ currentUser, logout }) => (
 const LoggedInNav = ({ currentUser, logout }) => (
   <div className='loggedin-nav-bar'>
     <div className='loggedin-logo-container'>
-      <img
+      <Link to="/spots/"><img
         className='logo'
         src='https://i.imgur.com/ebI5yes.png'
         alt='logo'
-        />
+        /></Link>
         <Greeting
           logout={logout}
           currentUser={currentUser}

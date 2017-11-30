@@ -26,6 +26,7 @@ class SpotShow extends React.Component{
 
   render(){
     const { spot } = this.props;
+    console.log(spot);
     return (
       <div className="spot-show">
         <div className="spot-image">
@@ -42,7 +43,10 @@ class SpotShow extends React.Component{
             <ul className="spot-overview">
               <li><h1>{spot.title}</h1></li>
               <li><h2>{spot.category}</h2></li>
+              <br/>
               <li><p>{spot.description}</p></li>
+              <br/>
+              <li><h3>Host: {spot.owner}</h3></li>
             </ul>
             <br/>
             <div className="review-form">

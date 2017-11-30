@@ -9,8 +9,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def index
-    reviews = Review.select { |review| review.spot_id.to_s == params[:spot_id]}
-    @reviews = reviews #filter here later
+    @reviews = Review.all #filter here later
     render json: @reviews
   end
 
@@ -24,4 +23,5 @@ class Api::ReviewsController < ApplicationController
     params.require(:review).permit(
       :user_id, :spot_id, :rating, :description)
   end
+
 end
