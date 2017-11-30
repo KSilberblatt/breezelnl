@@ -36,9 +36,9 @@ spot2 = Spot.create!(
   owner_id: user1.id,
   address: '2 Montego Ct, Coronado, CA 92118',
   image_url: 'https://static.pexels.com/photos/106399/pexels-photo-106399.jpeg',
-  category: 'Condominium',
-  title: '2',
-  price: '200',
+  category: 'Full House',
+  title: 'Suburban Dream',
+  price: '150',
   description: "This Captivating Coastal Condo is a glorious getaway geared towards freehearted families looking for a safe space for the kids to roam in a gated community while the parents have a romantic getaway at Loews Resort."
 )
 
@@ -46,9 +46,9 @@ spot3 = Spot.create!(
   owner_id: user1.id,
   address: '3 Montego Ct, Coronado, CA 92118',
   image_url: 'http://i.huffpost.com/gen/1425498/original.jpg',
-  category: 'Condominium',
-  title: '3',
-  price: '200',
+  category: 'Town House',
+  title: 'Smooth SF Spot',
+  price: '220',
   description: "This Captivating Coastal Condo is a glorious getaway geared towards freehearted families looking for a safe space for the kids to roam in a gated community while the parents have a romantic getaway at Loews Resort."
 )
 
@@ -56,9 +56,9 @@ spot4 = Spot.create!(
   owner_id: user1.id,
   address: '4 Montego Ct, Coronado, CA 92118',
   image_url: 'http://rockymountaintinyhouses.com/wp-content/uploads/2013/04/DSC_2160.jpg',
-  category: 'Condominium',
-  title: '4',
-  price: '200',
+  category: 'Mobile Home',
+  title: 'Cozy Car Cabin',
+  price: '30',
   description: "This Captivating Coastal Condo is a glorious getaway geared towards freehearted families looking for a safe space for the kids to roam in a gated community while the parents have a romantic getaway at Loews Resort."
 )
 
@@ -66,9 +66,9 @@ spot5 = Spot.create!(
   owner_id: user1.id,
   address: '5 Montego Ct, Coronado, CA 92118',
   image_url: 'https://static.dezeen.com/uploads/2017/11/surfboard-house-bfdo_dezeen_2364_sq2.jpg',
-  category: 'Condominium',
-  title: '5',
-  price: '200',
+  category: 'Full House',
+  title: 'Desert Dwelling',
+  price: '175',
   description: "This Captivating Coastal Condo is a glorious getaway geared towards freehearted families looking for a safe space for the kids to roam in a gated community while the parents have a romantic getaway at Loews Resort."
 )
 
@@ -76,9 +76,9 @@ spot6 = Spot.create!(
   owner_id: user1.id,
   address: '6 Montego Ct, Coronado, CA 92118',
   image_url: 'https://hips.hearstapps.com/edc.h-cdn.co/assets/16/33/1471371651-cliff-house-tb-001-night-from-water-2.jpg',
-  category: 'Condominium',
-  title: '6',
-  price: '200',
+  category: 'Full House',
+  title: 'Luxurious Lake Lodge',
+  price: '800',
   description: "This Captivating Coastal Condo is a glorious getaway geared towards freehearted families looking for a safe space for the kids to roam in a gated community while the parents have a romantic getaway at Loews Resort."
 )
 
@@ -86,9 +86,9 @@ spot7 = Spot.create!(
   owner_id: user1.id,
   address: '7 Montego Ct, Coronado, CA 92118',
   image_url: 'https://qzprod.files.wordpress.com/2015/06/floating-seahorse.jpg?quality=80&strip=all&w=4000',
-  category: 'Condominium',
-  title: '7',
-  price: '200',
+  category: 'Mobile Home',
+  title: 'The Floating Getaway',
+  price: '450',
   description: "This Captivating Coastal Condo is a glorious getaway geared towards freehearted families looking for a safe space for the kids to roam in a gated community while the parents have a romantic getaway at Loews Resort."
 )
 
@@ -96,9 +96,9 @@ spot8 = Spot.create!(
   owner_id: user1.id,
   address: '8 Montego Ct, Coronado, CA 92118',
   image_url: 'https://i2.wp.com/unusualplaces.org/wp-content/uploads/2012/03/pianohouse3.jpg',
-  category: 'Condominium',
-  title: '8',
-  price: '200',
+  category: 'Mansion',
+  title: 'Musical Mansion',
+  price: '1500',
   description: "This Captivating Coastal Condo is a glorious getaway geared towards freehearted families looking for a safe space for the kids to roam in a gated community while the parents have a romantic getaway at Loews Resort."
 )
 
@@ -106,9 +106,9 @@ spot9 = Spot.create!(
   owner_id: user1.id,
   address: '9 Montego Ct, Coronado, CA 92118',
   image_url: 'http://7p3nq48zas72j674m34vzol1-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/Upstate-new-york-houses-for-sale-02.jpg',
-  category: 'Condominium',
-  title: '9',
-  price: '200',
+  category: 'Full House',
+  title: 'Restful Rural Roost',
+  price: '220',
   description: "This Captivating Coastal Condo is a glorious getaway geared towards freehearted families looking for a safe space for the kids to roam in a gated community while the parents have a romantic getaway at Loews Resort."
 )
 
@@ -116,9 +116,9 @@ spot10 = Spot.create!(
   owner_id: user1.id,
   address: '10 Montego Ct, Coronado, CA 92118',
   image_url: 'https://upload.wikimedia.org/wikipedia/commons/9/9c/Tambulian_KotaBelud_Sabah_Traditional-houses-01.jpg',
-  category: 'Condominium',
-  title: '10',
-  price: '200',
+  category: 'Lodge',
+  title: 'Outback Lodge',
+  price: '75',
   description: "This Captivating Coastal Condo is a glorious getaway geared towards freehearted families looking for a safe space for the kids to roam in a gated community while the parents have a romantic getaway at Loews Resort."
 )
 
