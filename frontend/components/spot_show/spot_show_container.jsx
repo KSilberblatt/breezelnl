@@ -22,7 +22,7 @@ const mapStateToProps = (state, { match }) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchSpot: id => dispatch(fetchSpot(id)),
-  fetchReviews: id => dispatch(fetchReviews()),
+  fetchReviews: () => dispatch(fetchReviews()),
   clearErrors: () => dispatch(clearErrors()),
   clearReviewErrors: () => dispatch(clearReviewErrors()),
   submitBooking: (data) => dispatch(createBooking(data)),

@@ -27,8 +27,8 @@ export const receiveErrors = errors => ({
 });
 
 
-export const fetchReviews = filters => dispatch => (
-  APIUtil.fetchReviews(filters).then(reviews => (
+export const fetchReviews = () => dispatch => (
+  APIUtil.fetchReviews().then(reviews => (
     dispatch(receiveReviews(reviews))
   ))
 );

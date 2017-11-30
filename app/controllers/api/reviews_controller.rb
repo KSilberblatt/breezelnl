@@ -9,7 +9,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def index
-    reviews = Review.all
+    reviews = Review.select { |review| review.spot_id.to_s == params[:spot_id]}
     @reviews = reviews #filter here later
     render json: @reviews
   end

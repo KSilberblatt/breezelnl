@@ -50,6 +50,7 @@ class SpotShow extends React.Component{
                 submitReview={this.props.submitReview}
                 currentUser={this.props.currentUser}
                 errors={this.props.reviewErrors}
+                reviews={this.props.fetchReviews()}
                 clearErrors={this.props.clearReviewErrors}/>
             </div>
           </div>
