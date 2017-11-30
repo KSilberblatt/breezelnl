@@ -10,11 +10,13 @@ class Api::ReviewsController < ApplicationController
 
   def index
     @reviews = Review.all #filter here later
-    render json: @reviews
+    render :index
   end
 
   def show
-    @review = Review.find(params[:id])
+    @review = Review.find_by(id: params[:id])
+    @user = User.where(id: @review.user_id)
+    render json:[@user, @review]
   end
 
   private

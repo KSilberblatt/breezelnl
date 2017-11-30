@@ -23,15 +23,17 @@ class SpotShow extends React.Component{
   componentWillReceiveProps(nextProps){
     if (this.props.match.params.spotId !== nextProps.match.params.spotId) {
       this.props.fetchSpot(nextProps.match.params.spotId);
-    }
-    if (this.props.match.params.spotId !== nextProps.match.params.spotId) {
       this.props.fetchReviews();
     }
 
   }
 
   renderReviews(){
-
+    if (typeof(this.props.reviews.length) === "undefined"){
+      return(
+        <div></div>
+      );
+    }
     return (
       <ul className="errors">
         {this.props.reviews.map((review, i) => (
@@ -44,15 +46,17 @@ class SpotShow extends React.Component{
   }
 
   renderReview(review){
-    let stars ="";
+    let stars =[];
     for (let i = 0; i < review.rating; i++) {
-      stars += "&#9733;";
+      stars.push(<h3>&#9733;</h3>);
     }
+    console.log(review.user);
     return(
-      <div>
-        <p>{stars}</p>
-        <p>{review.description}</p>
-      </div>
+      <li>
+        <h3>{review.user_id}</h3>
+        <h3>{stars}</h3>
+        <h3>{review.description}</h3>
+      </li>
     );
   }
 
@@ -86,7 +90,6 @@ class SpotShow extends React.Component{
                 submitReview={this.props.submitReview}
                 currentUser={this.props.currentUser}
                 errors={this.props.reviewErrors}
-                reviews={this.props.fetchReviews()}
                 clearErrors={this.props.clearReviewErrors}/>
             </div>
           </div>

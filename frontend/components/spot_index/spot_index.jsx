@@ -19,13 +19,11 @@ class SpotIndex extends React.Component{
     }
   }
   renderSpots(){
-    console.log(typeof(this.props.spots.length));
     if (typeof(this.props.spots.length) === "undefined"){
       return(
         <div></div>
       );
     }
-    console.log(this.props.spots, "once");
     return(
       <div className="spot-index">
         {this.props.spots.map((spot) => (
