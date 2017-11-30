@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { clearErrors } from '../../actions/booking_actions';
+import { clearErrors, createBooking } from '../../actions/booking_actions';
 import { fetchSpot } from '../../actions/spot_actions';
 import { selectSpot } from '../../reducers/selectors';
 import SpotShow from './spot_show';
@@ -17,7 +17,8 @@ const mapStateToProps = (state, { match }) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchSpot: id => dispatch(fetchSpot(id)),
-  clearErrors: () => dispatch(clearErrors())
+  clearErrors: () => dispatch(clearErrors()),
+  submitBooking: (data) => dispatch(createBooking(data))
 });
 
 export default connect(

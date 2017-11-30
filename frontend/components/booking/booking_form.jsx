@@ -8,6 +8,7 @@ class BookingForm extends React.Component {
       user_id: props.currentUser.id,
       spot_id: props.spotId
     };
+    console.log(this.state, "<======");
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
@@ -27,11 +28,9 @@ class BookingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const booking = this.state;
-    this.props.processForm({booking});
-  }
-  handleSubmitLink(e) {
-    const booking = this.state;
-    this.props.processForm({booking});
+    console.log(this.state);
+    console.log(this.props);
+    this.props.submitBooking({booking});
   }
 
   renderInfo() {
@@ -72,25 +71,29 @@ class BookingForm extends React.Component {
     return (
       <div className="booking-form-container">
         {this.renderInfo()}
-        <div className="dates-guest-form">
+        <form onSubmit={this.handleSubmit} className="dates-guest-form">
           <label>Check In
-            <input id="start-date" type="date"/>
+            <input
+              onChange={this.update('start_date')}
+              id="start-date" type="date"/>
           </label>
           <label>Check Out
-            <input id="end-date" type="date"/>
+            <input
+              onChange={this.update('end_date')}
+              id="end-date" type="date"/>
           </label>
-          <select className="guests" name="guests">
+          <select value={this.state.num_guests}
+            onChange={this.update('num_guests')}
+            className="guests" name="guests">
             <option value="1">1 Guest</option>
             <option value="2">2 Guests</option>
             <option value="3">3 Guests</option>
             <option value="4">4 Guests</option>
             <option value="5">5 Guests</option>
           </select>
+          {this.renderSubmitButton()}
+        </form>
 
-        </div>
-        {this.renderSubmitButton()}
-        <p>{this.user_id}</p>
-        <p>{this.spot_id}</p>
       </div>
     );
   }

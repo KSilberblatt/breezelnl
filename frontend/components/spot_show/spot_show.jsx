@@ -10,6 +10,7 @@ class SpotShow extends React.Component{
     this.spotId=props.spotId;
     this.currentUser=props.currentUser;
     this.clearErrors=props.clearErrors;
+    this.submitBooking=props.submitBooking;
     }
 
   componentDidMount(){
@@ -51,6 +52,7 @@ class SpotShow extends React.Component{
           </div>
           <div className="booking-form">
             <BookingForm spotId={this.spotId}
+              submitBooking={this.submitBooking}
               currentUser={this.currentUser}
               clearErrors={this.clearErrors}/>
           </div>

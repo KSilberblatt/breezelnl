@@ -4,7 +4,7 @@ import { receiveCurrentUser } from '../../actions/session_actions';
 import { fetchSpot } from '../../actions/spot_actions';
 import { selectSpot } from '../../reducers/selectors';
 import { selectBooking } from '../../reducers/selectors';
-import { clearErrors } from '../../actions/booking_actions';
+import { clearErrors,  } from '../../actions/booking_actions';
 import BookingForm from './booking_form';
 
 const mapStateToProps = (state, { match }) => {

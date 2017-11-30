@@ -27,10 +27,10 @@ export const signup = (user1) => (dispatch) => (
   ))
 );
 
-export const login = (user1) => (dispatch) => (
-  SessionAPIUtil.login(user1).fail(
+export const login = (formUser) => (dispatch) => (
+  SessionAPIUtil.login(formUser).fail(
     err => (dispatch(receiveErrors(err.responseJSON)))).then(
-    (user2) => (dispatch(receiveCurrentUser(user2))))
+    (user) => (dispatch(receiveCurrentUser(user))))
 );
 
 window.login = login; // take out eventually

@@ -30,34 +30,40 @@ class ReviewForm extends React.Component {
     const user = this.state;
     this.props.processForm({user});
   }
-  handleSubmitLink(e) {
-    const user = this.state;
-    this.props.processForm({user});
-  }
 
   renderHeader() {
     return (
       <div className="review-form-header">
         <h3>Leave a Review!    </h3>
           <span className="rating">
-            <input type="radio" className="rating-input"
-                   id="rating-input-1-5" name="rating-input-1" />
+            <input type="radio" value="5"
+              onChange={this.update('rating')}
+              className="rating-input"
+              id="rating-input-1-5" name="rating" />
                  <label htmlFor="rating-input-1-5"
                    className="rating-star">&#9733;</label>
-            <input type="radio" className="rating-input"
-                   id="rating-input-1-4" name="rating-input-1" />
+            <input type="radio" value="4"
+              onChange={this.update('rating')}
+              className="rating-input"
+                   id="rating-input-1-4" name="rating" />
                  <label htmlFor="rating-input-1-4"
                    className="rating-star">&#9733;</label>
-            <input type="radio" className="rating-input"
-                   id="rating-input-1-3" name="rating-input-1" />
+            <input type="radio" value="3"
+              onChange={this.update('rating')}
+              className="rating-input"
+                   id="rating-input-1-3" name="rating" />
                  <label htmlFor="rating-input-1-3"
                    className="rating-star">&#9733;</label>
-            <input type="radio" className="rating-input"
-                   id="rating-input-1-2" name="rating-input-1" />
+                 <input type="radio" value="2"
+                   onChange={this.update('rating')}
+                   className="rating-input"
+                   id="rating-input-1-2" name="rating" />
                  <label htmlFor="rating-input-1-2"
                    className="rating-star">&#9733;</label>
-                 <input type="radio" className="rating-input" checked
-                   id="rating-input-1-1" name="rating-input-1" />
+            <input type="radio" value="1"
+              onChange={this.update('rating')}
+              className="rating-input" checked
+                   id="rating-input-1-1" name="rating" />
                  <label htmlFor="rating-input-1-1"
                    className="rating-star">&#9733;</label>
           </span>
