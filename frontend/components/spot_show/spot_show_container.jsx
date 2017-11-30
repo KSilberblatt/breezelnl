@@ -8,10 +8,12 @@ const mapStateToProps = (state, { match }) => {
   const currentUser = state.session.currentUser;
   const spotId = parseInt(match.params.spotId);
   const spot = selectSpot(state.entities, match.params.spotId);
+  const errors = state.errors.booking;
   return {
     spotId,
     spot,
-    currentUser
+    currentUser,
+    errors
   };
 };
 

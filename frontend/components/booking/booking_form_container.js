@@ -12,11 +12,13 @@ const mapStateToProps = (state, { match }) => {
   const spot = selectSpot(state.entities, match.params.spotId);
   const userId = parseInt(state.session.currentUser.id);
   const currentUser = state.session.currentUser;
+  const errors = state.errors.session;
   return {
     userId,
     spotId,
     spot,
-    currentUser
+    currentUser,
+    errors
   };
 };
 

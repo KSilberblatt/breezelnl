@@ -8,7 +8,7 @@ class BookingForm extends React.Component {
       user_id: props.currentUser.id,
       spot_id: props.spotId
     };
-    console.log(this.state, "<======");
+
     this.handleSubmit = this.handleSubmit.bind(this);
 
   }
@@ -28,10 +28,11 @@ class BookingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const booking = this.state;
-    console.log(this.state);
-    console.log(this.props);
     this.props.submitBooking({booking});
+
   }
+
+
 
   renderInfo() {
     return (
@@ -47,6 +48,7 @@ class BookingForm extends React.Component {
   }
 
   renderErrors() {
+
     return(
       <ul className="errors">
         {this.props.errors.map((error, i) => (
@@ -91,6 +93,9 @@ class BookingForm extends React.Component {
             <option value="4">4 Guests</option>
             <option value="5">5 Guests</option>
           </select>
+          <br/>
+          {this.renderErrors()}
+          <br/>
           {this.renderSubmitButton()}
         </form>
 

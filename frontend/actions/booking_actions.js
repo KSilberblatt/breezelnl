@@ -48,5 +48,5 @@ export const createBooking = formBooking => dispatch => (
     dispatch(receiveCurrentBooking(booking))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
-  ))
+  )).then(() => dispatch(clearErrors()))
 );

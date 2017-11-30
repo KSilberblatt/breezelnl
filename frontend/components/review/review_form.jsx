@@ -4,7 +4,6 @@ import { Link, withRouter, Image } from 'react-router-dom';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       user_id: props.currentUser.id,
       spot_id: props.spotId

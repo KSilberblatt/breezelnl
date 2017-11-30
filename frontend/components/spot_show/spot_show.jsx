@@ -6,7 +6,9 @@ import ReviewForm from '../review/review_form';
 class SpotShow extends React.Component{
   constructor( props ) {
     console.log(props, "<----");
+
     super(props);
+    this.errors=props.errors;
     this.spotId=props.spotId;
     this.currentUser=props.currentUser;
     this.clearErrors=props.clearErrors;
@@ -51,10 +53,11 @@ class SpotShow extends React.Component{
             </div>
           </div>
           <div className="booking-form">
-            <BookingForm spotId={this.spotId}
-              submitBooking={this.submitBooking}
-              currentUser={this.currentUser}
-              clearErrors={this.clearErrors}/>
+            <BookingForm spotId={this.props.spotId}
+              submitBooking={this.props.submitBooking}
+              currentUser={this.props.currentUser}
+              errors={this.props.errors}
+              clearErrors={this.props.clearErrors}/>
           </div>
         </div>
       </div>
