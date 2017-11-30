@@ -5,25 +5,19 @@ import ReviewForm from '../review/review_form';
 
 class SpotShow extends React.Component{
   constructor( props ) {
-
     super(props);
-    this.errors=props.errors;
-    this.spotId=props.spotId;
-    this.currentUser=props.currentUser;
-    this.clearErrors=props.clearErrors;
-    this.submitBooking=props.submitBooking;
-    this.fetchReviews=this.props.fetchReviews();
     }
 
-  componentDidMount(){
-    this.props.fetchSpot(this.props.match.params.spotId);
+  componentWillMount(){
+
+    this.props.fetchSpot(this.props.spotId);
+    console.log(this.props);
     this.props.fetchReviews();
   }
 
   componentWillReceiveProps(nextProps){
     if (this.props.match.params.spotId !== nextProps.match.params.spotId) {
       this.props.fetchSpot(nextProps.match.params.spotId);
-      this.props.fetchReviews();
     }
 
   }
@@ -50,7 +44,6 @@ class SpotShow extends React.Component{
     for (let i = 0; i < review.rating; i++) {
       stars.push(<h3>&#9733;</h3>);
     }
-    console.log(review.user);
     return(
       <li>
         <h3>{review.user_id}</h3>
@@ -61,7 +54,14 @@ class SpotShow extends React.Component{
   }
 
   render(){
+    console.log(this.props);
     const { spot } = this.props;
+    console.log(spot, "<--spot");
+    if (typeof(spot.owner) === "undefined"){
+      return(
+        <div></div>
+      );
+    }
     return (
       <div className="spot-show">
         <div className="spot-image">
@@ -81,7 +81,7 @@ class SpotShow extends React.Component{
               <br/>
               <li><p>{spot.description}</p></li>
               <br/>
-              <li><h3>Host: {spot.owner}</h3></li>
+              <li><h2>Host: {spot.owner.username}</h2></li>
             </ul>
             <br/>
             <div className="review-form">
