@@ -33,13 +33,25 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const review = this.state;
-    this.props.submitReview({review}).then(this.resetFields());
+    this.props.submitReview({review})
+    .then(() => this.sucessfulSubmit(),()=> this.unSucessfulSubmit());
+  }
+
+
+  sucessfulSubmit(){
+    this.resetFields();
+  }
+
+  unSucessfulSubmit(){
+
   }
 
   resetFields(){
     document.getElementById("review-form").reset();
-    this.update("rating");
-    this.update("description");
+    this.setState({
+      ['rating']: null,
+      ['description']: null
+    });
   }
 
   renderHeader() {
