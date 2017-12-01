@@ -52,7 +52,7 @@ class SpotShow extends React.Component{
     }
     return(
       <div>
-        <h3>{review.user.username}</h3>
+        <h3 className="review-owner">{review.user.username}</h3>
         <div className="review-stars">{stars}</div>
         <br/>
         <h3>{review.description}</h3>
