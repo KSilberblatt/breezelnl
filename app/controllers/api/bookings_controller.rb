@@ -12,7 +12,7 @@ class Api::BookingsController < ApplicationController
   def index
     bookings = Booking.all
     @bookings = bookings #filter here later
-    render json: @bookings
+    render :index
   end
 
   def show

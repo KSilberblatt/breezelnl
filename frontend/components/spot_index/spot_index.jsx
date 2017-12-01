@@ -24,10 +24,13 @@ class SpotIndex extends React.Component{
         <div></div>
       );
     }
+    console.log(this.props.spots, "<--");
     return(
       <div className="spot-index">
         {this.props.spots.map((spot) => (
-          this.renderSpot(spot)
+          <div key={`spot-${spot.id}`}>
+            {this.renderSpot(spot)}
+          </div>
         ))}
       </div>
     );
@@ -47,7 +50,6 @@ class SpotIndex extends React.Component{
     );
   }
   render(){
-    console.log(this.props.spots, "<--");
     return (
       <div>
         {this.renderSpots()}

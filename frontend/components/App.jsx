@@ -6,6 +6,7 @@ import SessionFormContainer from './session_form_container';
 import SignupContainer from './sign_up_container';
 import SpotShowContainer from './spot_show/spot_show_container';
 import SpotIndexContainer from './spot_index/spot_index_container';
+import BookingIndexContainer from './booking_index/booking_index_container';
 import BookingFormContainer from './booking/booking_form_container';
 import {Route, Switch} from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -21,6 +22,8 @@ const App = () => (
           component={SpotShowContainer} />
         <ProtectedRoute exact path="/spots"
           component={SpotIndexContainer} />
+        <ProtectedRoute exact path="/bookings"
+          component={BookingIndexContainer} />
       </Switch>
         <AuthRoute path="/signup" component={SignupContainer} />
         <AuthRoute path="/login" component={SignupContainer} />
