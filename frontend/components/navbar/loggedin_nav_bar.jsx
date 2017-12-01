@@ -4,7 +4,11 @@ import GreetingContainer from '../greeting_container';
 
 const greetByName = (currentUser, logout) => (
   <div className="nav-greeting">
-    <h2>Welcome, { currentUser.username }!</h2>
+    <div className="your-bookings">
+      <h2>Welcome, { currentUser.username }!</h2>
+      <Link className="bookings-link"
+        to="/bookings">Your Bookings</Link>
+    </div>
     <button className='logout-button' onClick={logout}>Log Out</button>
   </div>
 );

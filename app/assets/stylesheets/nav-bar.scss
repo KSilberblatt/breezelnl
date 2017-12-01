@@ -1,8 +1,22 @@
 .nav-greeting h2{
   justify-content: center;
   text-align: center;
-  line-height: 50px;
+  line-height: 30px;
 }
 .loggedin-logo-container{
   padding: 10px;
+}
+.your-bookings{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookings-link{
+  text-decoration: none;
+  color: darkgrey;
+}
+.bookings-link:hover{
+  background: lightgrey;
 }

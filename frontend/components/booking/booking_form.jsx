@@ -28,8 +28,17 @@ class BookingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const booking = this.state;
-    this.props.submitBooking({booking});
-    document.getElementById("booking-form").reset();
+    this.props.submitBooking({booking})
+      .then(() => this.sucessfulSubmit(),()=> this.unSucessfulSubmit());
+
+  }
+
+  sucessfulSubmit(){
+    this.props.history.push('/bookings');
+  }
+  unSucessfulSubmit(){
+    this.update('start_date');
+    this.update('end_date');
   }
 
 
