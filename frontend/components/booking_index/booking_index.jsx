@@ -23,7 +23,6 @@ class BookingIndex extends React.Component{
     }
   }
   renderSpots(){
-    console.log(this.props, "<--3");
     let myBookings = this.props.bookings;
     let bookings = $.map(myBookings, function(value, index) {
       return [value];
@@ -33,8 +32,6 @@ class BookingIndex extends React.Component{
         <div></div>
       );
     }
-    // console.log(this.props.entities.spots, "<--1");
-    // console.log(this.props.entities.bookings, "<--2");
     return(
       <div className="spot-index">
         {bookings.map((booking) => (
@@ -69,7 +66,6 @@ class BookingIndex extends React.Component{
     );
   }
   render(){
-    console.log(this.props, "<--");
     return (
       <div>
         <br/>

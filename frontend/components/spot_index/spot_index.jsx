@@ -24,7 +24,6 @@ class SpotIndex extends React.Component{
         <div></div>
       );
     }
-    console.log(this.props.spots, "<--");
     return(
       <div className="spot-index">
         {this.props.spots.map((spot) => (
