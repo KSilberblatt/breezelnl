@@ -24,6 +24,7 @@ a {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .spot-category{
@@ -37,7 +38,6 @@ a {
   text-decoration: none;
   font-size: 24px;
 }
-
 .spot-price{
   text-decoration: none;
   color: grey;

@@ -5,12 +5,14 @@
 }
 .loggedin-logo-container{
   padding: 10px;
+  background: linear-gradient(to bottom, #EC576B , white);
 }
 .your-bookings{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-shadow: 1px 1px black;
 }
 
 .bookings-link{
