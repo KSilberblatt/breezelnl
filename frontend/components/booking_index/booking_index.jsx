@@ -72,6 +72,10 @@ class BookingIndex extends React.Component{
     console.log(this.props, "<--");
     return (
       <div>
+        <br/>
+        <h2 className="booking-index-title">
+          {this.props.currentUser.username}&#39;s Bookings:
+        </h2>
         {this.renderSpots()}
       </div>
     );

@@ -74,13 +74,6 @@ class SpotShow extends React.Component{
         </div>
         <div className="below-image">
           <div className="description-feed">
-            <ul className="spot-nav-bar">
-              <li><a>The Host</a></li>
-              <li><a>Overview</a></li>
-              <li><a>Reviews</a></li>
-            </ul>
-            <br/>
-            <h2>Host: {spot.owner.username}</h2>
             <br/>
             <ul className="spot-overview">
               <li><h1>{spot.title}</h1></li>
@@ -89,6 +82,8 @@ class SpotShow extends React.Component{
               <li><p>{spot.description}</p></li>
               <br/>
             </ul>
+            <br/>
+            <h2>Host: {spot.owner.username}</h2>
             <br/>
             <div className="review-form">
               <h1 className="reviews-title">Reviews:</h1>

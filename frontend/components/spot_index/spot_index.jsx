@@ -52,6 +52,8 @@ class SpotIndex extends React.Component{
   render(){
     return (
       <div>
+        <h2 className="booking-index-title">Browse Our Homes!
+        </h2>
         {this.renderSpots()}
       </div>
     );
