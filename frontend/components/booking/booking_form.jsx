@@ -29,7 +29,7 @@ class BookingForm extends React.Component {
     e.preventDefault();
     const booking = this.state;
     this.props.submitBooking({booking});
-
+    document.getElementById("booking-form").reset();
   }
 
 
@@ -75,7 +75,8 @@ class BookingForm extends React.Component {
     return (
       <div className="booking-form-container">
         {this.renderInfo()}
-        <form onSubmit={this.handleSubmit} className="dates-guest-form">
+        <form onSubmit={this.handleSubmit} id="booking-form"
+          className="dates-guest-form">
           <div className="dates-form">
             <label>Check In
               <input

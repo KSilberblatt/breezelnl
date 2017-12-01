@@ -18,6 +18,7 @@ class ReviewForm extends React.Component {
     }
   }
 
+
   update(field) {
     if(field === "rating"){
       return e => this.setState({
@@ -32,12 +33,13 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const review = this.state;
-    this.props.submitReview({review});
-
+    this.props.submitReview({review}).then(this.resetFields());
   }
 
   resetFields(){
-    this.state=[]
+    document.getElementById("review-form").reset();
+    this.update("rating");
+    this.update("description");
   }
 
   renderHeader() {
@@ -110,7 +112,7 @@ class ReviewForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}
+        <form id="review-form" onSubmit={this.handleSubmit}
           className="booking-form-container">
           {this.renderHeader()}
           <div className="rating-form">

@@ -3,6 +3,7 @@ import { fetchSpots } from '../../actions/spot_actions';
 import { selectSpot } from '../../reducers/selectors';
 import SpotIndex from './spot_index';
 
+
 const mapStateToProps = (state, { match }) => {
   const spotId = parseInt(match.params.spotId);
   const spots = state.entities.spots;

@@ -4,6 +4,7 @@ import { clearReviewErrors, createReview, fetchReviews } from '../../actions/rev
 import { fetchSpot } from '../../actions/spot_actions';
 import { selectSpot } from '../../reducers/selectors';
 import SpotShow from './spot_show';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, { match }) => {
   const currentUser = state.session.currentUser;
@@ -31,7 +32,7 @@ const mapDispatchToProps = dispatch => ({
   submitReview: (data) => dispatch(createReview(data))
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(SpotShow);
+)(SpotShow));

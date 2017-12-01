@@ -21,12 +21,11 @@ class SpotShow extends React.Component{
   }
 
   renderReviews(){
-    let myReviews = this.props.spot.reviews;
+
+    let myReviews = this.props.reviews;
     let reviews = $.map(myReviews, function(value, index) {
       return [value];
     });
-    console.log(reviews, "<<<------");
-    console.log(reviews.length, "<<<------2");
     if (typeof(reviews.length) === "undefined"){
       return(
         <div></div>
@@ -34,11 +33,14 @@ class SpotShow extends React.Component{
     }
     return (
       <ul className="previous-reviews">
-        {reviews.map((review, i) => (
-          <li className="review-div" key={`review-${i}`}>
+        {reviews.map((review, i) => {
+          if (review.spot.id !== this.props.spotId)
+          return;
+          return(
+          <li className="review-div" key={`review-${review.id}`}>
             {this.renderReview(review)}
           </li>
-        ))}
+        );})}
       </ul>
     );
   }
@@ -65,7 +67,6 @@ class SpotShow extends React.Component{
         <div></div>
       );
     }
-    console.log(this.props);
     return (
       <div className="spot-show">
         <div className="spot-image">
@@ -95,7 +96,8 @@ class SpotShow extends React.Component{
                 submitReview={this.props.submitReview}
                 currentUser={this.props.currentUser}
                 errors={this.props.reviewErrors}
-                clearErrors={this.props.clearReviewErrors}/>
+                clearErrors={this.props.clearReviewErrors}
+                spotShow={this}/>
             </div>
             <br/>
             <h2>Host: {spot.owner.username}</h2>
