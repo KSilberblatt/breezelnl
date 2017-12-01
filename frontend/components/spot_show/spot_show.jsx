@@ -9,9 +9,7 @@ class SpotShow extends React.Component{
     }
 
   componentWillMount(){
-
     this.props.fetchSpot(this.props.spotId);
-    console.log(this.props);
     this.props.fetchReviews();
   }
 
@@ -23,15 +21,21 @@ class SpotShow extends React.Component{
   }
 
   renderReviews(){
-    if (typeof(this.props.reviews.length) === "undefined"){
+    let myReviews = this.props.spot.reviews;
+    let reviews = $.map(myReviews, function(value, index) {
+      return [value];
+    });
+    console.log(reviews, "<<<------");
+    console.log(reviews.length, "<<<------2");
+    if (typeof(reviews.length) === "undefined"){
       return(
         <div></div>
       );
     }
     return (
-      <ul className="errors">
-        {this.props.reviews.map((review, i) => (
-          <li key={`review-${i}`}>
+      <ul className="previous-reviews">
+        {reviews.map((review, i) => (
+          <li className="review-div" key={`review-${i}`}>
             {this.renderReview(review)}
           </li>
         ))}
@@ -42,26 +46,26 @@ class SpotShow extends React.Component{
   renderReview(review){
     let stars =[];
     for (let i = 0; i < review.rating; i++) {
-      stars.push(<h3>&#9733;</h3>);
+      stars.push(<h3 key={`star-${i}`}>&#9733;</h3>);
     }
     return(
-      <li>
-        <h3>{review.user_id}</h3>
-        <h3>{stars}</h3>
+      <div>
+        <h3>{review.user.username}</h3>
+        <div className="review-stars">{stars}</div>
+        <br/>
         <h3>{review.description}</h3>
-      </li>
+      </div>
     );
   }
 
   render(){
-    console.log(this.props);
     const { spot } = this.props;
-    console.log(spot, "<--spot");
     if (typeof(spot.owner) === "undefined"){
       return(
         <div></div>
       );
     }
+    console.log(this.props);
     return (
       <div className="spot-show">
         <div className="spot-image">
@@ -81,17 +85,20 @@ class SpotShow extends React.Component{
               <br/>
               <li><p>{spot.description}</p></li>
               <br/>
-              <li><h2>Host: {spot.owner.username}</h2></li>
             </ul>
             <br/>
             <div className="review-form">
+              <h1 className="reviews-title">Reviews:</h1>
+              <br/>
               {this.renderReviews()}
-              <ReviewForm spotId={this.spotId}
+              <ReviewForm spotId={this.props.spotId}
                 submitReview={this.props.submitReview}
                 currentUser={this.props.currentUser}
                 errors={this.props.reviewErrors}
                 clearErrors={this.props.clearReviewErrors}/>
             </div>
+            <br/>
+            <h2>Host: {spot.owner.username}</h2>
           </div>
           <div className="booking-form">
             <BookingForm spotId={this.props.spotId}

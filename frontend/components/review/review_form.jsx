@@ -33,6 +33,11 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     const review = this.state;
     this.props.submitReview({review});
+
+  }
+
+  resetFields(){
+    this.state=[]
   }
 
   renderHeader() {
@@ -109,10 +114,11 @@ class ReviewForm extends React.Component {
           className="booking-form-container">
           {this.renderHeader()}
           <div className="rating-form">
-            <input type="textarea"
+            <textarea className="rating-form"
               onChange={this.update('description')}
               />
           </div>
+          <br/>
           {this.renderSubmitButton()}
         </form>
       </div>
