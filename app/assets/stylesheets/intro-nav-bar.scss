@@ -1,3 +1,6 @@
+$color-aqua : #4EC5C1;
+$color-tan : #E2DBBE;
+$color-pink : #EC576B;
 .logo {
   width: 50px;
   z-index: 1;
@@ -18,7 +21,7 @@
 }
 
 .nav-greeting{
-  color: #4EC5C1;
+  color: $color-aqua;
   float: right;
   display: flex;
   flex-direction: row;
@@ -26,8 +29,8 @@
 
 .logout-button{
   margin-left: 20px;
-  color: #E2DBBE;
-  background-color: #EC576B;
+  color: $color-tan;
+  background-color: $color-pink;
   padding: 10px;
   box-shadow: 3px 3px 3px darkblue;
   text-decoration: none;
