@@ -1,3 +1,4 @@
+$color-pink : #EC576B;
 .nav-greeting h2{
   justify-content: center;
   text-align: center;
@@ -5,7 +6,7 @@
 }
 .loggedin-logo-container{
   padding: 10px;
-  background: linear-gradient(to bottom, #EC576B , white);
+  background: linear-gradient(to bottom, $color-pink , white);
 }
 .your-bookings{
   display: flex;
