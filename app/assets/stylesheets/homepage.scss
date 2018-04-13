@@ -1,3 +1,4 @@
+$color-tan : #E2DBBE;
 .splash {
   border-top: 3px solid darkblue;
   width: 1920px;
@@ -10,7 +11,7 @@
 }
 .signup{
   height: 785px;
-  color: #E2DBBE;
+  color: $color-tan;
   text-align: center;
 }
 .login-form-box{
@@ -32,14 +33,14 @@
   height: 50%;
   background: rgba(20,13,79, .6);
   z-index: 1;
-  color: #E2DBBE;
+  color: $color-tan;
   padding: 10px 20px;
 }
 input[type=text]:focus {
-    border: 3px solid #E2DBBE;
+    border: 3px solid $color-tan;
 }
 input[type=password]:focus {
-    border: 3px solid #E2DBBE;
+    border: 3px solid $color-tan;
 }
 .slogan {
   text-shadow: 2px 2px grey;
