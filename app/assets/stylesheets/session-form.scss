@@ -1,3 +1,4 @@
+$color-pink : #EC576B;
 .authLinks{
   width: 100%;
   display: flex;
@@ -39,7 +40,7 @@
 .login-submit-button {
   display: inline-block;
   border-radius: 4px;
-  background-color: #EC576B;
+  background-color: $color-pink;
   border: none;
   color: rgb(226,219,191);
   text-align: center;
@@ -91,7 +92,7 @@
   border-radius: 10px;
   text-decoration: inherit;
   display: inline-block;
-  border: solid 1px #EC576B;
+  border: solid 1px $color-pink;
   background: rgba(236, 87, 107, 1);
   font-family: 'Helvetica', serif;
   font-size: 30px;
